@@ -7,7 +7,7 @@ on:
         type: string
 
 jobs:
-  build:
+  triggered_workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Print payload message
