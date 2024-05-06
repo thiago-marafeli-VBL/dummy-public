@@ -1,8 +1,7 @@
 name: Triggered Workflow
 
 on:
-  repository_dispatch:
-    types: [trigger-workflow]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -10,4 +9,4 @@ jobs:
     steps:
       - name: Print payload message
         run: |
-            echo "Message from payload: ${{ github.event.client_payload.message }}"
+            echo "Message from payload: ${{ github.event.inputs.message }}"
