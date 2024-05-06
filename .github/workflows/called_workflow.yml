@@ -2,11 +2,14 @@ name: Triggered Workflow
 run-name: Triggered workflow
 on:
   workflow_dispatch:
+    inputs:
+      message:
+        type: string
 
 jobs:
   triggered_workflow:
     runs-on: ubuntu-latest
     steps:
-      - name: Print payload message
+      - name: Print input message
         run: |
             echo "Message from payload: ${{ github.event.inputs.message }}"
