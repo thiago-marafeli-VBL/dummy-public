@@ -2,6 +2,9 @@ name: Triggered Workflow
 run-name: Triggered workflow
 on:
   workflow_dispatch:
+    inputs:
+      message:
+        type: string
 
 jobs:
   build:
