@@ -43,6 +43,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN2 }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"thiago-marafeli-vbl_dummy-public_sub2" /o:"thiago-marafeli-vbl" /d:sonar.token="${{ secrets.SONAR_TOKEN2 }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.projectBaseDir="subrepo2/HelloWorld/" 
-          dotnet build HelloWorld.csproj
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"thiago-marafeli-vbl_dummy-public_sub2" /o:"thiago-marafeli-vbl" /d:sonar.token="${{ secrets.SONAR_TOKEN2 }}" /d:sonar.host.url="https://sonarcloud.io" 
+          cd subrepo2/HelloWorld/
+          dotnet build ./HelloWorld.csproj
+          cd ../..
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN2 }}"
