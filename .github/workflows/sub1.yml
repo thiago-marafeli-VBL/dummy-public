@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-    paths: subrepo1
+    paths: subrepo1/
 jobs:
   sonarcloud:
     name: SonarCloud

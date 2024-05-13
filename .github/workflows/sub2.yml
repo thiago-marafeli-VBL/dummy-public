@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-    paths: subrepo2
+    paths: subrepo2/
 jobs:
   build:
     name: Build and analyze
