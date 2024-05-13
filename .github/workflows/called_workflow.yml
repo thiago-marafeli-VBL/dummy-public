@@ -13,4 +13,4 @@ jobs:
       - name: Print input message
         run: |
             echo "Message from payload: ${{ github.event.inputs.message }}"
-            exit 25
+            exit 0
