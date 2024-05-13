@@ -6,7 +6,9 @@ on:
   push:
     branches:
       - master
-    paths-ignore: repo*/**
+    paths-ignore: 
+      - repo*/**
+      - .github/**
   workflow_dispatch:
     inputs:
       reference:
