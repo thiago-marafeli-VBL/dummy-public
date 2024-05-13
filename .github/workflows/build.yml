@@ -7,7 +7,7 @@ on:
     branches:
       - master
     paths-ignore: 
-      - repo*/**
+      - repo**/**
       - .github/**
   workflow_dispatch:
     inputs:
