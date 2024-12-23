@@ -24,8 +24,13 @@ jobs:
           ref: ${{ inputs.reference || github.ref }}
           submodules: recursive
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Echo
+        run: echo "${{ github.event.repository.name }}"
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.projectKey=vonbraunlabs_${{ github.repository }}
