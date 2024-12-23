@@ -33,4 +33,4 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args: >
-            -Dsonar.projectKey=vonbraunlabs_${{ github.repository }}
+            -Dsonar.projectKey=vonbraunlabs_${{ github.event.repository.name }}
